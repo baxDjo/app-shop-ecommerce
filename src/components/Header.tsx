@@ -11,7 +11,7 @@ export default function Header() {
           <NavLink to="/products">Catalogue</NavLink>
           <NavLink to="/orders">Commandes</NavLink>
         </nav>
-        <NavLink to="/cart" className="cart-link">🛒 {itemsCount}</NavLink>
+        <NavLink to="/Login" className="cart-link">🛒 {itemsCount}</NavLink>
       </div>
     </header>
   );

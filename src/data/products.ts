@@ -1,4 +1,4 @@
-import {type Product } from "../types";
+import { type Product } from "../types";
 
 export const PRODUCTS: Product[] = [
   {
@@ -10,12 +10,25 @@ export const PRODUCTS: Product[] = [
     rating: 4.6,
     stock: 7,
     image: "https://picsum.photos/seed/bike1/600/400",
-    description: "Cadre carbone, transmission 12v, freinage disque.",
+    description: "Cadre carbone, transmission 12 vitesses, freinage disque.",
     specs: { Poids: "7.5 kg", Taille: "M/L", Couleur: "Noir" },
     tags: ["route", "carbone", "disque"]
   },
   {
     id: "p-2",
+    name: "VTT All-Mountain X5",
+    brand: "TrailRider",
+    category: "Vélos",
+    price: 159999,
+    rating: 4.7,
+    stock: 12,
+    image: "https://picsum.photos/seed/mtb1/600/400",
+    description: "Suspension intégrale, freins hydrauliques, cadre alu renforcé.",
+    specs: { Poids: "13 kg", Taille: "M", Couleur: "Rouge" },
+    tags: ["vtt", "tout-terrain"]
+  },
+  {
+    id: "p-3",
     name: "Casque AirFlow Pro",
     brand: "SafeRider",
     category: "Équipements",
@@ -28,7 +41,7 @@ export const PRODUCTS: Product[] = [
     tags: ["casque", "sécurité"]
   },
   {
-    id: "p-3",
+    id: "p-4",
     name: "Gants Grip Gel",
     brand: "Gripster",
     category: "Équipements",
@@ -36,7 +49,199 @@ export const PRODUCTS: Product[] = [
     rating: 4.1,
     stock: 40,
     image: "https://picsum.photos/seed/gloves/600/400",
-    description: "Paume gel, évacuation de la transpiration.",
+    description: "Paume en gel, évacuation de la transpiration.",
     tags: ["gants"]
+  },
+  {
+    id: "p-5",
+    name: "Maillot Respirant Pro Fit",
+    brand: "CycloWear",
+    category: "Vêtements",
+    price: 5999,
+    rating: 4.5,
+    stock: 50,
+    image: "https://picsum.photos/seed/jersey/600/400",
+    description: "Tissu micro-aéré et coupe ergonomique.",
+    tags: ["maillot", "respirant"]
+  },
+  {
+    id: "p-6",
+    name: "Cuissard Gel Comfort",
+    brand: "CycloWear",
+    category: "Vêtements",
+    price: 6999,
+    rating: 4.3,
+    stock: 33,
+    image: "https://picsum.photos/seed/bibshort/600/400",
+    description: "Peau de chamois gel, maintien optimal.",
+    tags: ["cuissard", "confort"]
+  },
+  {
+    id: "p-7",
+    name: "Chaussures Clip-In Racer",
+    brand: "SpeedFit",
+    category: "Chaussures",
+    price: 11999,
+    rating: 4.6,
+    stock: 18,
+    image: "https://picsum.photos/seed/shoes1/600/400",
+    description: "Semelle carbone, système de serrage Boa.",
+    tags: ["chaussures", "clip"]
+  },
+  {
+    id: "p-8",
+    name: "Pédales Automatiques ProLock",
+    brand: "SpeedFit",
+    category: "Accessoires",
+    price: 6499,
+    rating: 4.5,
+    stock: 22,
+    image: "https://picsum.photos/seed/pedals/600/400",
+    description: "Légères, robustes et ajustables.",
+    tags: ["pédales", "accessoire"]
+  },
+  {
+    id: "p-9",
+    name: "Pompe CO₂ Mini",
+    brand: "FastAir",
+    category: "Accessoires",
+    price: 2499,
+    rating: 4.2,
+    stock: 70,
+    image: "https://picsum.photos/seed/pump/600/400",
+    description: "Compatible Presta/Schrader, cartouches incluses.",
+    tags: ["pompe", "co2"]
+  },
+  {
+    id: "p-10",
+    name: "Compteur GPS RideTrack 100",
+    brand: "RideTech",
+    category: "Électronique",
+    price: 9999,
+    rating: 4.5,
+    stock: 15,
+    image: "https://picsum.photos/seed/gps1/600/400",
+    description: "Suivi GPS, calories, cadence, Bluetooth.",
+    tags: ["gps", "compteur"]
+  },
+  {
+    id: "p-11",
+    name: "Lunettes UV400 Racer",
+    brand: "VisionX",
+    category: "Équipements",
+    price: 4999,
+    rating: 4.4,
+    stock: 40,
+    image: "https://picsum.photos/seed/glasses/600/400",
+    description: "Verres interchangeables, protection UV400.",
+    tags: ["lunettes", "protection"]
+  },
+  {
+    id: "p-12",
+    name: "Bidon Thermo 650 ml",
+    brand: "HydroMax",
+    category: "Accessoires",
+    price: 1599,
+    rating: 4.2,
+    stock: 80,
+    image: "https://picsum.photos/seed/bottle/600/400",
+    description: "Conserve la température jusqu’à 2 h.",
+    tags: ["bidon", "hydratation"]
+  },
+  {
+    id: "p-13",
+    name: "Sacoche de Cadre Étanche",
+    brand: "RoadPack",
+    category: "Accessoires",
+    price: 3299,
+    rating: 4.3,
+    stock: 25,
+    image: "https://picsum.photos/seed/bag1/600/400",
+    description: "Compartiment smartphone, tissu imperméable.",
+    tags: ["sacoche", "étanche"]
+  },
+  {
+    id: "p-14",
+    name: "Éclairage Avant PowerBeam 800",
+    brand: "LightPro",
+    category: "Électronique",
+    price: 4599,
+    rating: 4.6,
+    stock: 35,
+    image: "https://picsum.photos/seed/light1/600/400",
+    description: "800 lumens, USB-C, autonomie 6 h.",
+    tags: ["éclairage", "usb"]
+  },
+  {
+    id: "p-15",
+    name: "Feu Arrière Smart Brake",
+    brand: "LightPro",
+    category: "Électronique",
+    price: 3499,
+    rating: 4.5,
+    stock: 42,
+    image: "https://picsum.photos/seed/light2/600/400",
+    description: "Détection de freinage automatique.",
+    tags: ["feu", "sécurité"]
+  },
+  {
+    id: "p-16",
+    name: "Support Smartphone 360°",
+    brand: "RideTech",
+    category: "Accessoires",
+    price: 1999,
+    rating: 4.3,
+    stock: 50,
+    image: "https://picsum.photos/seed/phone/600/400",
+    description: "Rotation complète, compatible jusqu’à 6.8 po.",
+    tags: ["support", "smartphone"]
+  },
+  {
+    id: "p-17",
+    name: "Chaîne Renforcée 11 v",
+    brand: "SpeedFit",
+    category: "Pièces",
+    price: 2999,
+    rating: 4.5,
+    stock: 60,
+    image: "https://picsum.photos/seed/chain/600/400",
+    description: "Traitement anti-corrosion, maillon rapide.",
+    tags: ["chaîne", "pièce"]
+  },
+  {
+    id: "p-18",
+    name: "Cassette 11-32 dents",
+    brand: "SpeedFit",
+    category: "Pièces",
+    price: 4999,
+    rating: 4.4,
+    stock: 45,
+    image: "https://picsum.photos/seed/cassette/600/400",
+    description: "Compatible Shimano/SRAM 11 vitesses.",
+    tags: ["cassette", "transmission"]
+  },
+  {
+    id: "p-19",
+    name: "Freins Hydrauliques DualStop",
+    brand: "BrakeX",
+    category: "Pièces",
+    price: 8999,
+    rating: 4.7,
+    stock: 20,
+    image: "https://picsum.photos/seed/brakes/600/400",
+    description: "Puissance constante, purge facile.",
+    tags: ["freins", "hydraulique"]
+  },
+  {
+    id: "p-20",
+    name: "Roues Carbone Aero 45 mm",
+    brand: "Cyclo",
+    category: "Pièces",
+    price: 239999,
+    rating: 4.8,
+    stock: 6,
+    image: "https://picsum.photos/seed/wheel/600/400",
+    description: "Jantes carbone 45 mm, moyeux céramique.",
+    tags: ["roues", "carbone"]
   }
 ];

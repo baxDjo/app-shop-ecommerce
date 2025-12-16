@@ -1,17 +1,22 @@
-// src/main.tsx
+// main.tsx
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import { StoreProvider } from "./app/store"; // <-- chemin unique et cohérent
 import "./index.css";
+
+import { AuthProvider } from "./features/auth/AuthContext";
+import { StoreProvider } from "./app/store";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <StoreProvider>
-        <App />
-      </StoreProvider>
+      <AuthProvider>
+        <StoreProvider>
+          <App />
+        </StoreProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
+

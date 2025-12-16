@@ -57,7 +57,7 @@ input, select {
   font: inherit;
 }
 .filters { display:flex; gap:.75rem; align-items:center; flex-wrap:wrap; }
-.filters select { max-width: 240px; }
+.filters select { max-width: 290px; }
 .filters .price { display:flex; gap:.5rem; }
 .filters .price input { max-width: 140px; }
 
@@ -135,6 +135,29 @@ input, select {
 .grid2 { display:grid; grid-template-columns: 1fr 1fr; gap:.8rem; }
 label { display:grid; gap:.35rem; font-size:.92rem; }
 label input { max-width: 100%; }
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.summary-action {
+  margin-top: auto;       /* pousse le bouton en bas */
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center; /* ou flex-end si tu préfères */
+}
+
+
+
+/* bouton plus petit */
+.btn-sm {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+}
+
 
 /* === Commandes === */
 .orders { display:grid; gap:1rem; }

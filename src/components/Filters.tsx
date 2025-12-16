@@ -26,7 +26,7 @@ export default function Filters() {
         <input
           type="number"
           min={0}
-          placeholder="Min €"
+          placeholder="Min $"
           onChange={(e) =>
             setPriceRange(e.target.value ? Number(e.target.value) * 100 : null, null)
           }
@@ -34,7 +34,7 @@ export default function Filters() {
         <input
           type="number"
           min={0}
-          placeholder="Max €"
+          placeholder="Max $"
           onChange={(e) =>
             setPriceRange(null, e.target.value ? Number(e.target.value) * 100 : null)
           }

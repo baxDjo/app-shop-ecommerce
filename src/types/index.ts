@@ -25,12 +25,4 @@ export type Order = {
   shipping: number;
   tax: number;
   total: number;
-  shippingInfo: {
-    firstName: string;
-    lastName: string;
-    address: string;
-    city: string;
-    country: string;
-    email: string;
-  };
 };
