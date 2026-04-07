@@ -7,7 +7,7 @@ export default function Account() {
       <h2>Mon compte</h2>
       {user ? (
         <>
-          <p><strong>{user.name || user.email}</strong></p>
+          <p><strong>{user.email}</strong></p>
           <p className="muted">{user.email}</p>
           <button className="btn" onClick={logout}>Se déconnecter</button>
         </>

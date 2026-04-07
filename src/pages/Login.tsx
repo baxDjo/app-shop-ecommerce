@@ -1,11 +1,11 @@
 import { type FormEvent, useState } from "react";
 import { useAuth } from "../features/auth/AuthContext";
-import { useNavigate, useSearchParams, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
-  const [sp] = useSearchParams();
+
 
   const [err, setErr] = useState<string | null>(null);
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {

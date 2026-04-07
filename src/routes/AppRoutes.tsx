@@ -12,7 +12,8 @@ import Register from "../pages/Register";
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Catalog />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/products" element={<Catalog />} />
       <Route path="/products/:id" element={<ProductDetail />} />
       <Route path="/cart" element={<Cart />} />

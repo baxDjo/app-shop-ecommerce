@@ -10,20 +10,13 @@ import {
 import { http, setAccessToken } from "../../api/http";
 import type { User } from "../../types/User";
 
-
 type AuthState = {
   user: User | null;
   accessToken: string | null;
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
-  register: (
-    email: string,
-    password: string,
-    firstname: string,
-    lastname: string
-  ) => Promise<void>;
+  register: (email: string, password: string, firstname: string, lastname: string) => Promise<void>;
   logout: () => Promise<void>;
-  ensureFresh: () => Promise<void>;
 };
 
 const AuthCtx = createContext<AuthState | null>(null);
@@ -38,7 +31,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setAccessToken(token);
   }
 
-  // Au démarrage : pas de /me → pas de 404
   useEffect(() => {
     setLoading(false);
   }, []);
@@ -52,30 +44,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const token = data?.accessToken ?? null;
     applyToken(token);
 
-    const u: User = data?.user ??
-    {
+    const u: User = data?.user ?? {
       id: String(data?.id ?? ""),
       email: String(data?.email ?? email),
       firstname: String(data?.firstname ?? ""),
       lastname: String(data?.lastname ?? ""),
     };
-
     setUser(u);
   };
 
-  const register = async (
-    email: string,
-    password: string,
-    firstname: string,
-    lastname: string
-  ) => {
-    // ⚠️ ton backend exige EXACTEMENT ceci :
-    const payload = {
-      firstname,
-      lastname,
-      email,
-      password,
-    };
+  const register = async (email: string, password: string, firstname: string, lastname: string) => {
+    const payload = { firstname, lastname, email, password };
 
     const data = (await http("/auth/register", {
       method: "POST",
@@ -85,38 +64,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const token = data?.accessToken ?? null;
     applyToken(token);
 
-    const u: User = data?.user ??
-    {
+    const u: User = data?.user ?? {
       id: String(data?.id ?? ""),
       email: String(data?.email ?? email),
-      firstname: String(data?.firstname ?? firstname),
-      lastname: String(data?.lastname ?? lastname),
+      firstname,
+      lastname,
     };
-
     setUser(u);
   };
 
+  // ✅ LOGOUT COMPLET
   const logout = async () => {
+    // 1) appelle le backend (si présent) pour clear refresh cookie / session
     try {
       await http("/auth/logout", { method: "POST" });
-    } catch {}
+    } catch {
+      // si le backend n'a pas cette route ou renvoie une erreur, on logout quand même côté front
+    }
+
+    // 2) clear front state
     applyToken(null);
     setUser(null);
   };
 
-  // pas encore de refresh
-  const ensureFresh = async () => {};
-
   const value = useMemo<AuthState>(
-    () => ({
-      user,
-      accessToken,
-      loading,
-      login,
-      register,
-      logout,
-      ensureFresh,
-    }),
+    () => ({ user, accessToken, loading, login, register, logout }),
     [user, accessToken, loading]
   );
 
