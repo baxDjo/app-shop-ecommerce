@@ -1,5 +1,5 @@
 // src/routes/AppRoutes.tsx
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Catalog from "../pages/Catalog";
 import ProductDetail from "../pages/ProductDetail";
@@ -12,7 +12,7 @@ import Register from "../pages/Register";
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Catalog />} />
+      <Route path="/" element={<Navigate to="/products" replace />} />
       <Route path="/home" element={<Home />} />
       <Route path="/products" element={<Catalog />} />
       <Route path="/products/:id" element={<ProductDetail />} />
